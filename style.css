@@ -1,0 +1,18 @@
+
+div#main_container{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+
+div#inner_box{
+    color:gainsboro;
+    text-align: center;
+
+    background-color: darkblue;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+}
