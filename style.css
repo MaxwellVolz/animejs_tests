@@ -3,20 +3,16 @@ html, body{
     margin: 0;
 }
 
-div#main_container{
-    margin: auto;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    /* border: 3px solid green; */
-    /* padding: 10px; */
-}
+    height: 100vh;
+  }
 
 
-div#inner_box{
-    color:gainsboro;
-    text-align: center;
-
-    background-color: darkblue;
-    margin: auto;
-    width: 200px;
-    height: 200px;
+.svg_container svg{
+      width: 100%;
+      height:100%;
 }

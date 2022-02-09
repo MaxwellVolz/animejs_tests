@@ -1,39 +1,44 @@
+const wrapperEl = document.querySelector('svg.svg_container');
+const numberOfEls = 50;
+const duration = 20000;
+const delay = duration / numberOfEls;
 
-anime({
-  targets: '.bezi',
-  d: [
-    { value: [
-      'M 10 80 Q 52.5 10, 95 80 T 180 80']
-    },
-    { value: 'M 10 60 Q 52.5 10, 95 80 T 180 60' },
-    { value: 'M 10 40 Q 52.5 10, 95 80 T 180 40' },
-    { value: 'M 10 80 Q 52.5 10, 95 80 T 180 80' }
-  ],
-  delay: anime.stagger(100),
-  // easing: 'easeInOutQuad', 
-  easing: 'linear', 
-  duration: 2000,
-  loop: true
+let tl = anime.timeline({
+  duration: delay,
+  complete: function() { tl.restart(); }
 });
 
-anime({
-  targets: '.quadcurve',
-  d: [
-    { value: [
-      'M 0 600 Q 400 20 800 400 T 1920 800']
-    },
-    { value: 'M 0 400 Q 500 30 900 400 T 1920 700' },
-    { value: 'M 0 360 Q 600 70 1000 400 T 1920 600' },
-    // { value: 'M 0 400 Q 500 30 900 400 T 1920 700' },
-    { value: 'M 0 600 Q 400 20 800 400 T 1920 800' }
-  ],
-  delay: anime.stagger(200),
-  // offset: '+= 100',
-  easing: 'easeInOutSine', 
-  // easing: 'linear', 
-  // easing: 'cubicBezier(.5, .05, .1, .3)',
-  // duration: anime.stagger(100),
-  duration: 2000,
-  loop: true
-});
+function createEl(i) {
+  let el = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+  // const hue = Math.round(360 / numberOfEls * i);
+
+  el.classList.add('el');
+  el.setAttribute('stroke', 'red')
+  el.setAttribute('stroke-width', '2')
+  el.setAttribute('fill', 'transparent')
+  el.setAttribute('d', 'M 0 600 Q 400 20 800 400 T 1920 800')
+   // el.style.backgroundColor = 'hsl(' + hue + ', 40%, 60%)';
+
+  tl.add({
+    begin: function() {
+      anime({
+        targets: el,
+        d: [
+          { value: [
+            'M 0 600 Q 400 20 800 400 T 1920 800']
+          },
+          { value: 'M 0 400 Q 500 30 900 400 T 1920 700' },
+          // { value: 'M 0 360 Q 600 70 1000 400 T 1920 600' },
+          { value: 'M 0 600 Q 400 20 800 400 T 1920 800' }
+        ],
+        easing: 'easeInOutSine',
+        direction: 'alternate',
+        duration: duration * .1
+      });
+    }
+  });
+  wrapperEl.appendChild(el);
+};
+
+for (let i = 0; i < numberOfEls; i++) createEl(i);
 
