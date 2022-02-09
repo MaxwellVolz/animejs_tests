@@ -9,17 +9,35 @@ anime({
   });
 
 
+// anime({
+//   targets: '#curver',
+//   d: [
+//     { value: [
+//       'M 10 80 Q 52.5 10, 95 80 T 180 80']
+//     },
+//     { value: 'M 10 60 Q 52.5 10, 95 80 T 180 60' },
+//     { value: 'M 10 40 Q 52.5 10, 95 80 T 180 40' },
+//     { value: 'M 10 80 Q 52.5 10, 95 80 T 180 80' }
+//   ],
+//   easing: 'easeInOutQuad',
+//   duration: 2000,
+//   loop: true
+// });
+
+
 anime({
-  targets: '#morpher',
+  targets: '.bezi',
   d: [
     { value: [
-      'M0,56c0,0,58.8-25.2,104.5-12.9S227.8,69.6,256,47.9']
+      'M 10 80 Q 52.5 10, 95 80 T 180 80']
     },
-    { value: 'M0,56c0,0,75.1,27.5,116,0c40.7-27.4,101.9-27.1,140-8.1' },
-    { value: 'M0,56c0,0,59.3,6.7,104.5-12.9C148,24.3,227.8,69.6,256,47.9' },
-    { value: 'M0,56c0,0,58.8-25.2,104.5-12.9S227.8,69.6,256,47.9' }
+    { value: 'M 10 60 Q 52.5 10, 95 80 T 180 60' },
+    { value: 'M 10 40 Q 52.5 10, 95 80 T 180 40' },
+    { value: 'M 10 80 Q 52.5 10, 95 80 T 180 80' }
   ],
-  easing: 'easeOutQuad',
+  delay: anime.stagger(100),
+  // easing: 'easeInOutQuad', 
+  easing: 'linear', 
   duration: 2000,
   loop: true
 });
