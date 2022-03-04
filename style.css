@@ -56,6 +56,15 @@ main > p{
     color: #F2C12E !important;
 }
 
+.carousel-inner{
+    height:80vh;
+}
+
 .carousel-item{
+    height:100%;
     background-color: #6581A6;
+}
+
+#myCarousel > div > div > div > div{
+    margin-bottom: 20vh
 }
