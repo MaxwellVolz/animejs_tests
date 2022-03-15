@@ -46,6 +46,22 @@ main > p{
     text-align: center;
 } */
 
+body > header > nav > a{
+    font-family: "Arial Black";
+    font-weight: 100 !important; 
+    color: #F2C12E !important;
+}
+
+.navbar-title{
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
 #title_main  {
     font-family: 'Roboto', sans-serif !important;
     color: #F2C12E !important;
@@ -63,6 +79,13 @@ main > p{
 .carousel-item{
     height:100%;
     background-color: #6581A6;
+}
+
+.carousel-item > img{
+    object-fit: cover;
+    height:100%;
+    bottom:0;
+    
 }
 
 #myCarousel > div > div > div > div{
